@@ -1,27 +1,26 @@
-# AngularDocker
+# Angular-Docker image
+Steps:
+1. create the new project by running: <br>
+```my new angular-docker-app```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+2. Ensure that it runs locally on: <br>
+http://localhost:4200 <br>
+```ng server```
 
-## Development server
+3. create a Dockerfile: <br>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+4. Build the image: <br>
+```docker build --rm -t angular-docker-app:latest```
 
-## Code scaffolding
+5. check to ensure image is listed among your docker images locally: <br>
+```docker images```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+6. Run the container: <br>
+```docker run --rm -d -p 90:80/tcp angular-docker-app```
 
-## Build
+# what you can do after!!
+a. Push to docker hub <br>
+b. Push to google container registory, for future deployment in the kubernets cluster <br>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Refer to this blog for above project:
+<a>https://medium.com/@trevornathan/dockerize-a-starter-angular-app-deploy-to-google-kubernetes-add-a-ci-cd-pipeline-with-cloud-build-7f2077033784 </a>
